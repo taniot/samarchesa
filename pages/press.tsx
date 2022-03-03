@@ -44,7 +44,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => {
     props: {
       page,
     },
-    //revalidate: 60, // In seconds
+    revalidate: 60, // In seconds
   };
 };
 
