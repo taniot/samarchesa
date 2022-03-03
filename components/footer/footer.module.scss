@@ -1,0 +1,129 @@
+.footerWrapper {
+  @apply bg-black-other relative;
+
+  .containerWrapper {
+    @apply container mx-auto py-10  flex flex-col justify-center items-center  border-b border-display;
+
+    .infoWrapper {
+      @apply container;
+      ul {
+        @apply antialiased mx-5;
+        li {
+          @apply flex flex-col items-center mb-3 text-base text-logo;
+          p {
+            @apply flex flex-col items-center text-center;
+          }
+
+          span {
+            &.sep {
+              @apply hidden;
+            }
+            &.label {
+              @apply hidden;
+            }
+          }
+        }
+      }
+    }
+
+    .socialWrapper {
+      @apply container;
+      .socialContainer {
+        @apply flex items-center justify-center my-3;
+
+        .whatsappIcon {
+          @apply w-6 h-6 text-logo fill-current mx-1;
+        }
+
+        .instagramIcon {
+          @apply w-6 h-6 text-logo fill-current;
+        }
+      }
+    }
+  }
+  .loveIcon {
+    @apply w-4 h-4 inline-flex text-logo fill-current mx-1 mr-1 ml-1;
+    color: #008083;
+  }
+}
+
+@screen lg {
+  .footerWrapper {
+    .containerWrapper {
+      @apply flex flex-row pb-10 items-center;
+
+      .brandWrapper {
+        @apply w-3/12 flex justify-center;
+      }
+
+      .infoWrapper {
+        @apply w-9/12;
+        ul {
+          @apply antialiased mx-5;
+          li {
+            @apply flex-row mb-1;
+            p {
+              @apply flex-row mb-0 text-left;
+            }
+
+            span {
+              @apply mr-1;
+              &.sep {
+                @apply inline mx-1;
+              }
+              &.label {
+                @apply inline;
+              }
+            }
+          }
+        }
+      }
+
+      .socialWrapper {
+        @apply hidden;
+        .socialContainer {
+          @apply flex items-center justify-center my-0;
+
+          .whatsappIcon {
+            @apply w-6 h-6 text-logo fill-current mx-1;
+          }
+
+          .instagramIcon {
+            @apply w-6 h-6 text-logo fill-current mx-1;
+          }
+        }
+      }
+    }
+    .loveIcon {
+      @apply w-4 h-4 inline-flex text-logo fill-current mx-1 mr-1 ml-1;
+      color: #008083;
+    }
+  }
+}
+
+@screen xl {
+  .footerWrapper {
+    .containerWrapper {
+      .infoWrapper {
+        @apply w-8/12;
+      }
+
+      .socialWrapper {
+        @apply contents w-1/12;
+        .socialContainer {
+          .whatsappIcon {
+            @apply w-7 h-7 text-logo fill-current mx-2;
+          }
+
+          .instagramIcon {
+            @apply w-7 h-7 text-logo fill-current mx-2;
+          }
+        }
+      }
+    }
+    .loveIcon {
+      @apply w-6 h-6 inline-flex text-logo fill-current mx-1 mr-1 ml-1;
+      color: #008083;
+    }
+  }
+}

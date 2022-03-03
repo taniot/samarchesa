@@ -1,0 +1,93 @@
+.productWrapper {
+  @apply border-b border-gray-light relative mb-10;
+
+  .images {
+    @apply w-full relative mb-5;
+  }
+
+  .body {
+    @apply text-lg leading-relaxed text-justify;
+
+    .header {
+      @apply flex items-center mb-5;
+
+      .block {
+        @apply h-14 w-14 mr-3;
+      }
+      h2 {
+        @apply font-display-semibold tracking-tight leading-tight text-3xl text-black-medium;
+      }
+    }
+    h3 {
+      @apply font-sans-bold antialiased text-lg  text-gray-dark mb-4;
+    }
+    .description > p {
+      @apply mb-6 text-base antialiased leading-7 text-gray-dark;
+    }
+  }
+}
+
+@screen md {
+  .productWrapper {
+    @apply pb-5;
+
+    .body {
+      @apply pr-10;
+      .header {
+        .block {
+          @apply mr-4 h-20 w-20;
+        }
+        h2 {
+        }
+      }
+      h3 {
+      }
+      .description > p {
+      }
+    }
+  }
+}
+
+@screen lg {
+  .productWrapper {
+    @apply flex justify-between items-start border-b-0;
+
+    .images {
+      @apply w-6/12;
+    }
+
+    .body {
+      @apply w-6/12 pl-14 pr-10;
+    }
+
+    &:nth-of-type(odd) {
+      @apply flex-row-reverse;
+
+      .body {
+        @apply w-6/12 pl-10 pr-14;
+      }
+    }
+    .blockContainer {
+      @apply hidden;
+    }
+  }
+}
+
+@screen 2xl {
+  .productWrapper {
+    @apply items-center;
+    .body {
+      .header {
+        .block {
+          @apply mr-7;
+        }
+        h2 {
+          @apply text-4xl;
+        }
+      }
+      h3 {
+        @apply text-xl;
+      }
+    }
+  }
+}

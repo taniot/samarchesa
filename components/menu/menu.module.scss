@@ -1,0 +1,27 @@
+.button {
+  @apply z-40;
+}
+
+.aside {
+  @apply bg-black-other;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 18.75rem;
+  height: 100vh;
+  @apply z-30;
+}
+
+.container {
+  margin: 4.5rem 1.4rem;
+}
+
+.container a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 600;
+  display: block;
+  margin: 20px;
+}

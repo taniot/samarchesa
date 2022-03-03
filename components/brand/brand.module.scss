@@ -1,0 +1,56 @@
+.brandContainer {
+  @apply relative;
+
+  .brand {
+    @apply antialiased opacity-100 h-auto text-gray-light;
+  }
+
+  &.large {
+    width: 13rem;
+    min-width: 13rem;
+    height: 10rem;
+    min-height: 10rem;
+  }
+
+  &.medium {
+    width: 10rem;
+    min-width: 10rem;
+    height: 7rem;
+    min-height: 7rem;
+  }
+
+  &.small {
+    width: 7rem;
+    min-width: 7rem;
+    height: 4rem;
+    min-height: 4rem;
+  }
+}
+
+@screen lg {
+  .brandContainer {
+    &.large {
+      width: 17rem;
+      min-width: 17rem;
+      height: 10rem;
+      min-height: 10rem;
+    }
+  }
+}
+
+@screen xl {
+  .brandContainer {
+    &.large {
+      width: 19rem;
+      min-width: 19rem;
+      height: 12rem;
+      min-height: 12rem;
+    }
+    &.medium {
+      width: 13rem;
+      min-width: 13rem;
+      height: 7rem;
+      min-height: 7rem;
+    }
+  }
+}

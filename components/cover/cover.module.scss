@@ -1,0 +1,65 @@
+.coverContainer {
+  background-color: var(--black-custom);
+  @apply flex flex-col h-screen;
+
+  .videoContainer {
+    @apply relative w-full h-full;
+
+    .video {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  .claimContainer {
+    @apply absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0;
+
+    .menuContainer {
+      @apply flex justify-center;
+
+      @media md {
+        @apply mb-20;
+      }
+
+      .mouseScroller {
+        opacity: 0.7;
+        z-index: 9;
+        cursor: pointer;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        white-space: nowrap;
+        width: 24px;
+        height: 38px;
+        min-height: 0px;
+        min-width: 0px;
+        max-height: none;
+        max-width: none;
+        text-align: center;
+        line-height: 17px;
+        letter-spacing: 0px;
+        font-weight: 400;
+        font-size: 14px;
+        border-color: rgb(255, 255, 255);
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 23px;
+        transform-origin: 50% 50%;
+        transform: translate(0px, 0px);
+        visibility: visible;
+        .mouseScrollerInside {
+          @apply animate-mouse-moves;
+          position: absolute;
+          display: block;
+          top: 29%;
+          left: 50%;
+          width: 8px;
+          height: 8px;
+          margin: -4px 0 0 -4px;
+          border-radius: 50%;
+          cursor: pointer;
+          background: #fff;
+        }
+      }
+    }
+  }
+}

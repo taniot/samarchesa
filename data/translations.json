@@ -1,0 +1,22 @@
+{
+  "it": {
+    "claim_complete": "Fiore Sardo e Pecorini a Latte crudo e naturali",
+    "claim_parts": {
+      "a": "Fiore Sardo",
+      "b": "Pecorini",
+      "c": "Latte Crudo",
+      "d": "Naturali"
+    },
+    "subClaim": "Azienda Agricola del Pastore Giuseppe Cugusi"
+  },
+  "en": {
+    "claim_complete": "Fiore Sardo e Pecorini a Latte crudo e naturali",
+    "claim_parts": {
+      "a": "Fiore Sardo",
+      "b": "Pecorini",
+      "c": "Latte Crudo",
+      "d": "Naturali"
+    },
+    "subClaim": "Azienda Agricola del Pastore Giuseppe Cugusi"
+  }
+}

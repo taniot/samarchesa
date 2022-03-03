@@ -1,0 +1,72 @@
+.claimContainer {
+  @apply flex
+  flex-col
+  mx-auto
+  items-center
+  mb-10;
+
+  .claim {
+    @apply relative
+    text-center
+       border-b
+       pb-4
+       opacity-100
+       leading-snug
+       text-4xl
+       font-display-bold
+       mb-5
+       text-gray-light
+    uppercase;
+    .mobile {
+      @apply uppercase;
+    }
+  }
+
+  .subClaim {
+    @apply flex justify-center mx-auto w-8/12 text-center uppercase text-base font-display-semibold text-gray-light;
+  }
+}
+
+@screen md {
+  .claimContainer {
+    .claim {
+      @apply text-6xl leading-snug;
+    }
+
+    .subClaim {
+      @apply text-xl;
+    }
+  }
+}
+
+@screen lg {
+  .claimContainer {
+    .claim {
+      @apply w-10/12 leading-tight;
+    }
+  }
+}
+
+@screen xl {
+  .claimContainer {
+    .claim {
+      @apply text-7xl w-10/12 leading-snug;
+    }
+
+    .subClaim {
+      @apply text-xl;
+    }
+  }
+}
+
+@screen 2xl {
+  .claimContainer {
+    .claim {
+      @apply text-8xl w-11/12 leading-snug;
+    }
+
+    .subClaim {
+      @apply text-xl;
+    }
+  }
+}

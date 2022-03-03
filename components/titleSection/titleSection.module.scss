@@ -1,0 +1,25 @@
+.container {
+  @apply py-12 pt-20;
+
+  .title {
+    @apply antialiased font-display-bold text-black-medium tracking-tight uppercase antialiased text-4xl leading-none text-center mb-4;
+  }
+
+  .subtitle {
+    @apply antialiased font-display-semibold text-logo text-xl mx-5 leading-snug text-center;
+  }
+}
+
+@screen md {
+  .container {
+    @apply pb-20;
+
+    .title {
+      @apply text-5xl mb-4;
+    }
+
+    .subtitle {
+      @apply text-2xl;
+    }
+  }
+}
