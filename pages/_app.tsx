@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   const value = useMemo(() => {
     return { isOpen, toggleOpen };
-  }, [isOpen]);
+  }, [isOpen, toggleOpen]);
 
   useEffect(() => {
     const body = document.body;

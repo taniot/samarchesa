@@ -61,7 +61,7 @@ const Menu = () => {
             variants={sideVariants}
           >
             {links.map(({ name, to, id }) => (
-              <Link key={id} href={to}>
+              <Link key={id} href={to} passHref>
                 <motion.a
                   href={to}
                   whileHover={{ scale: 1.1 }}

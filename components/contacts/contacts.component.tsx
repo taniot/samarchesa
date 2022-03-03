@@ -14,7 +14,7 @@ const Contacts = () => {
             href={`tel:+39 328 60 27 607`}
             className={styles.button}
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
             title='Chiama Giuseppe al +39 328 60 27 607'
           >
             Chiama
@@ -23,7 +23,7 @@ const Contacts = () => {
             href={`mailto:samarchesa2.0@gmail.com`}
             className={styles.button}
             target='_blank'
-            rel='noopener'
+            rel='noopener noreferrer'
             title='Scrivi a samarchesa2.0@gmail.com'
           >
             Scrivi

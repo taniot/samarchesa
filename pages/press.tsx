@@ -77,6 +77,7 @@ const Home: FC<Props> = ({ page }) => {
             {images?.map((image: any) => {
               return (
                 <motion.div
+                  key={image.id}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}

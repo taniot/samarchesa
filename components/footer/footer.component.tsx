@@ -88,17 +88,17 @@ const Footer = () => {
           <div className={styles.socialContainer}>
             <a
               href={`https://api.whatsapp.com/send?phone=+39 328 60 27 607`}
-              target='_blank'
               title='whatsapp'
-              rel='noreferrer'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <BsWhatsapp className={styles.whatsappIcon} />
             </a>
             <a
               href='https://www.instagram.com/formaggisamarchesa/'
-              target='_blank'
               title='instagram'
-              rel='instagram'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <BsInstagram className={styles.instagramIcon} />
             </a>
@@ -107,7 +107,11 @@ const Footer = () => {
       </div>
       <div className='flex items-center justify-center pt-10 pb-10'>
         <p className='items-center text-logo text-sm'>
-          <a href='https://taniot.net/' rel='noreferrer' target='_blank'>
+          <a
+            href='https://taniot.net/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             handmade with <GoHeart className={styles.loveIcon} /> by taniot
           </a>
         </p>

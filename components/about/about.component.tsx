@@ -18,12 +18,12 @@ const About = () => {
         <div className={styles.text}>
           <p className={styles.big}>Sa Marchesa è Giuseppe Cugusi.</p>
           <p className={styles.medium}>
-            Della campagna conosce ogni sfumatura, ogni odore. Da suo padre
+            {`Della campagna conosce ogni sfumatura, ogni odore. Da suo padre
             pastore ha ereditato l'amore per questa terra sarda che, sotto la
             scorza dura, nasconde grande generosità. I suoi formaggi la
             rappresentano magnificamente. Basta assaggiarne una scheggia, e la
             bocca si insapora di mirto, lentisco, mentuccia selvatica. È come
-            mordere la macchia mediterranea.
+            mordere la macchia mediterranea.`}
           </p>
           <div className={styles.linkIconContainer}>
             <BsPlayCircle className={styles.videoIcon} />
@@ -31,9 +31,9 @@ const About = () => {
               className={styles.videoLink}
               href='https://www.youtube.com/watch?v=kmEvol2uZPQ'
               target='_blank'
-              rel='noopener'
+              rel='noopener noreferrer'
             >
-              Guarda "Io mi voglio Pastore"
+              Guarda {`"Io mi voglio Pastore"`}
             </a>
           </div>
         </div>
@@ -42,7 +42,7 @@ const About = () => {
       <div className={styles.textContainer}>
         <div className={styles.textBody}>
           <p>
-            Nel suo ovile di Tanca Sa Marchesa, a Fordongianus, nel Barigadu al
+            {` Nel suo ovile di Tanca Sa Marchesa, a Fordongianus, nel Barigadu al
             confine con le terme romane dell'Imperatore Traiano, Giuseppe Cugusi
             cura le sue pecore da trentacinque anni. Le conosce una ad una, le
             ama e loro ricambiano. Sono pecore felici, qui i pascoli alti,
@@ -57,10 +57,10 @@ const About = () => {
             l'uso barbaricino che vuole la lavorazione del formaggio nel luogo
             dove le pecore vivono e vengono munte. Le sue sono mani sante che si
             tuffano nel bianco e, eseguendo gesti antichi di secoli, creano
-            pezzi unici come il Fiore Sardo DOP.
+            pezzi unici come il Fiore Sardo DOP.`}
           </p>
           <p>
-            Giuseppe è un uomo antico, bello e forte. Laura, sua moglie, è una
+            {`Giuseppe è un uomo antico, bello e forte. Laura, sua moglie, è una
             donna bella, moderna e imprenditrice nata. Insieme, dieci anni fa,
             consapevoli del valore del loro formaggio, hanno deciso di
             diversificare la produzione, e oltre al Fiore Sardo hanno
@@ -68,7 +68,7 @@ const About = () => {
             clienti hanno molto apprezzato e così Laura ha scelto di
             interrompere la vendita a industriali e grossisti per dedicarsi al
             circuito di ristoranti, enoteche e punti vendita, anche piccoli, che
-            sapessero amare quelle forme.
+            sapessero amare quelle forme.`}
           </p>
           <div className='absolute w-3 h-3 bg-gray-light right-0 bottom-0' />
         </div>

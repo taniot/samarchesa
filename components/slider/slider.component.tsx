@@ -41,6 +41,7 @@ const SliderImages = ({ images }: { images: any }) => {
                       layout='responsive'
                       width={1200}
                       height={880}
+                      alt={`Image ${idx}`}
                     />
                   </div>
                 </div>

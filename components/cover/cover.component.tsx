@@ -40,7 +40,12 @@ const Cover = () => {
     <>
       <div ref={coverRef} className={styles.coverContainer}>
         <div className={styles.videoContainer}>
-          <Image src={cover} layout='fill' className={styles.video} />
+          <Image
+            src={cover}
+            layout='fill'
+            className={styles.video}
+            alt='Sa Marchesa'
+          />
         </div>
         <div className={styles.claimContainer}>
           <Brand type={BrandType.LARGE} />
