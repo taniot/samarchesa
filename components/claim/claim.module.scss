@@ -42,7 +42,7 @@
 @screen lg {
   .claimContainer {
     .claim {
-      @apply w-10/12 leading-tight;
+      @apply w-11/12 leading-tight;
     }
   }
 }
@@ -50,7 +50,7 @@
 @screen xl {
   .claimContainer {
     .claim {
-      @apply text-7xl w-10/12 leading-snug;
+      @apply text-7xl w-full leading-snug;
     }
 
     .subClaim {
@@ -62,7 +62,7 @@
 @screen 2xl {
   .claimContainer {
     .claim {
-      @apply text-8xl w-11/12 leading-snug;
+      @apply text-7xl w-full leading-snug;
     }
 
     .subClaim {

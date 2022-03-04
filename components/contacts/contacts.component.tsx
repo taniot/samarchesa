@@ -2,7 +2,7 @@ import styles from './contacts.module.scss';
 
 const Contacts = () => {
   return (
-    <div className={styles.contactsWrapper}>
+    <div id='contatti' className={styles.contactsWrapper}>
       <div className={styles.containerWrapper}>
         <h2>Siete interessati ai nostri formaggi?</h2>
         <p>

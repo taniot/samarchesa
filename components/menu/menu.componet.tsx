@@ -6,9 +6,10 @@ import styles from './menu.module.scss';
 import Link from 'next/link';
 
 const links = [
-  { name: 'Giuseppe Cugusi', to: '/#about', id: 2 },
-  { name: 'Formaggi', to: '#', id: 3 },
-  { name: 'Contatti', to: '#', id: 4 },
+  { name: 'Sa Marchesa', to: '/', id: 1 },
+  { name: 'Giuseppe Cugusi', to: '/#giuseppe-cugusi', id: 2 },
+  { name: 'Formaggi', to: '/#formaggi', id: 3 },
+  { name: 'Contatti', to: '#contatti', id: 4 },
   { name: 'Press', to: '/press', id: 5 },
 ];
 
@@ -20,12 +21,6 @@ const itemVariants = {
 };
 
 const sideVariants = {
-  closed: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: -1,
-    },
-  },
   open: {
     transition: {
       staggerChildren: 0.2,
@@ -43,13 +38,13 @@ const Menu = () => {
       {open && (
         <motion.aside
           className={styles.aside}
-          initial={{ width: 0 }}
+          initial={{ width: isSmall ? '100vw' : '500px', height: 0 }}
           animate={{
             transition: { delay: 0.1, duration: 0.3 },
-            width: isSmall ? '100vw' : '500px',
+            height: '100vh',
           }}
           exit={{
-            width: 0,
+            height: 0,
             transition: { delay: 0.1, duration: 0.3 },
           }}
         >
@@ -64,7 +59,6 @@ const Menu = () => {
               <Link key={id} href={to} passHref>
                 <motion.a
                   href={to}
-                  whileHover={{ scale: 1.1 }}
                   variants={itemVariants}
                   onClick={toggleOpen}
                 >

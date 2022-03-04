@@ -21,6 +21,7 @@ module.exports = {
         black: {
           other: '#111111',
           medium: '#1a1a1a',
+          custom: '#2d2d2d',
         },
       },
       keyframes: {

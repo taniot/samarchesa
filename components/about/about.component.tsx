@@ -4,7 +4,7 @@ import { BsPlayCircle } from 'react-icons/bs';
 
 const About = () => {
   return (
-    <section id='about' className={styles.aboutWrapper}>
+    <section id='giuseppe-cugusi' className={styles.aboutWrapper}>
       <TitleSection
         title={'Giuseppe Cugusi'}
         subtitle={'"Io mi voglio pastore"'}

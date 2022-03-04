@@ -10,7 +10,7 @@ interface Props {
 
 const Products: FC<Props> = ({ products }) => {
   return (
-    <section id='products' className={styles.productsWrapper}>
+    <section id='formaggi' className={styles.productsWrapper}>
       <TitleSection
         title={'Formaggi'}
         subtitle={'"Parola d\'ordine, qualità"'}

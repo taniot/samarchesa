@@ -1,5 +1,5 @@
 .header {
-  @apply w-full px-4 py-5  flex justify-between items-center bg-gray-white z-20;
+  @apply w-full px-4 py-5  flex justify-between items-center bg-black-custom z-20;
 }
 
 .stuck {
@@ -10,8 +10,4 @@
   @apply z-40 relative;
   width: 112px;
   height: 18px;
-
-  * {
-    cursor: pointer;
-  }
 }

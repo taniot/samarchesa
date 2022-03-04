@@ -55,7 +55,7 @@ const Cover = () => {
             <span
               className={styles.mouseScroller}
               onClick={() =>
-                router.push('/#about', undefined, { shallow: true })
+                router.push('/#giuseppe-cugusi', undefined, { shallow: true })
               }
             >
               <span className={styles.mouseScrollerInside}></span>

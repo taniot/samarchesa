@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import Header from '../components/header/header.component';
 import { gql, GraphQLClient } from 'graphql-request';
 import LayoutDefault from '../components/layout/LayoutDefault.component';
@@ -6,6 +6,7 @@ import TitleSection from '../components/titleSection/titleSection.component';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import ImageViewer from 'react-simple-image-viewer';
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   const endpoint: string = process.env.GRAPH_CMS_ENDPOINT as string;
   const client = new GraphQLClient(endpoint, {
@@ -61,23 +62,37 @@ const breakpointObj = {
   500: 1,
 };
 
-const Home: FC<Props> = ({ page }) => {
+const PressPage: FC<Props> = ({ page }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
   const { title, subtitle, images } = page || {};
-  console.log(page);
+
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
   return (
     <LayoutDefault>
       <Header stuck={false} />
-      <div>
+      <div className='pt-10'>
         <TitleSection title={title} subtitle={`"${subtitle}"`} />
-        <div className='container  mx-auto md:mb-10'>
+        <div className='md:mx-20 md:mb-10'>
           <Masonry
             className='flex animate-slide-fwd gap-10'
             breakpointCols={breakpointObj}
           >
-            {images?.map((image: any) => {
+            {images?.map((image: any, idx: number) => {
               return (
                 <motion.div
-                  key={image.id}
+                  key={idx}
+                  onClick={() => openImageViewer(idx)}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -95,10 +110,19 @@ const Home: FC<Props> = ({ page }) => {
               );
             })}
           </Masonry>
+          {isViewerOpen && (
+            <ImageViewer
+              src={images.map((image: any) => image.url)}
+              currentIndex={currentImage}
+              disableScroll={true}
+              closeOnClickOutside={true}
+              onClose={closeImageViewer}
+            />
+          )}
         </div>
       </div>
     </LayoutDefault>
   );
 };
 
-export default Home;
+export default PressPage;

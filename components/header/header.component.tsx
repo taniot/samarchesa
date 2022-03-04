@@ -29,16 +29,12 @@ const Header: FC<Props> = ({ stuck }) => {
       className={cls(styles.header, stuckClass)}
     >
       <div className={styles.brand}>
-        <Link href='/#about'>
-          <a>
-            <Image
-              src='/images/logo-square.svg'
-              layout='fill'
-              alt='Sa Marchesa'
-              priority
-            />
-          </a>
-        </Link>
+        <Image
+          src='/images/logo-square.svg'
+          layout='fill'
+          alt='Sa Marchesa'
+          priority
+        />
       </div>
 
       <MenuToggle />
