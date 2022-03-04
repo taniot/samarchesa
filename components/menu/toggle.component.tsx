@@ -4,8 +4,6 @@ import MenuContext from '../../contexts/menu.context';
 import styles from './menu.module.scss';
 
 const Path = (props: any) => {
-  console.log({ props });
-
   return (
     <motion.path
       fill='transparent'
