@@ -3,8 +3,9 @@ import type { AppProps } from 'next/app';
 import { useCycle } from 'framer-motion';
 import MenuContext from '../contexts/menu.context';
 import { useMemo, useEffect } from 'react';
-import 'lightgallery/scss/lightgallery.scss';
-import 'lightgallery/scss/lg-zoom.scss';
+import TagManager from 'react-gtm-module';
+
+const GOOGLE_TAG_MANAGER_ID: string = process.env.GTM_ID!;
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -12,6 +13,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const value = useMemo(() => {
     return { isOpen, toggleOpen };
   }, [isOpen, toggleOpen]);
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: GOOGLE_TAG_MANAGER_ID });
+  }, []);
 
   useEffect(() => {
     const body = document.body;

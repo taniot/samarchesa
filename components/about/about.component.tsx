@@ -1,6 +1,7 @@
 import TitleSection from '../titleSection/titleSection.component';
 import styles from './about.module.scss';
 import { BsPlayCircle } from 'react-icons/bs';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -11,9 +12,13 @@ const About = () => {
       />
       <div className={styles.bodyContainer}>
         <div className={styles.image}>
-          <video autoPlay muted loop playsInline id='about-video'>
-            <source src='/video/giuseppecugusi.mp4' type='video/mp4' />
-          </video>
+          <Image
+            src='/images/giuseppecugusi.jpg'
+            layout='responsive'
+            width={2000}
+            height={1472}
+            alt='Giuseppe Cugusi'
+          />
         </div>
         <div className={styles.text}>
           <p className={styles.big}>Sa Marchesa è Giuseppe Cugusi.</p>

@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from '../footer/footer.component';
 import Cover from '../cover/cover.component';
+import WhatsApp from '../whatsapp/whatsapp.component';
 
 type Props = {
   title?: string;
@@ -22,7 +23,7 @@ const LayoutHome = ({ children, title }: Props): JSX.Element => (
       <link rel='canonical' href='https://samarchesa.com' />
       <link rel='icon' href='/favicon.png' />
     </Head>
-
+    <WhatsApp />
     <Cover />
     <main>{children}</main>
     <Footer />
