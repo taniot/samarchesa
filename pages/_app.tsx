@@ -5,7 +5,7 @@ import MenuContext from '../contexts/menu.context';
 import { useMemo, useEffect } from 'react';
 import TagManager from 'react-gtm-module';
 
-const GOOGLE_TAG_MANAGER_ID: string = process.env.GTM_ID!;
+const GOOGLE_TAG_MANAGER_ID: string = process.env.NEXT_PUBLIC_GTM_ID!;
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
