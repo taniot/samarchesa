@@ -6,7 +6,8 @@ import TitleSection from '../components/titleSection/titleSection.component';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ImageViewer from 'react-simple-image-viewer';
+import { SRLWrapper } from 'simple-react-lightbox';
+
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   const endpoint: string = process.env.GRAPH_CMS_ENDPOINT as string;
   const client = new GraphQLClient(endpoint, {
@@ -63,20 +64,7 @@ const breakpointObj = {
 };
 
 const PressPage: FC<Props> = ({ page }) => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
-
   const { title, subtitle, images } = page || {};
-
-  const openImageViewer = useCallback((index) => {
-    setCurrentImage(index);
-    setIsViewerOpen(true);
-  }, []);
-
-  const closeImageViewer = () => {
-    setCurrentImage(0);
-    setIsViewerOpen(false);
-  };
 
   return (
     <LayoutDefault>
@@ -84,41 +72,33 @@ const PressPage: FC<Props> = ({ page }) => {
       <div className='pt-10'>
         <TitleSection title={title} subtitle={`"${subtitle}"`} />
         <div className='md:mx-20 md:mb-10'>
-          <Masonry
-            className='flex animate-slide-fwd gap-10'
-            breakpointCols={breakpointObj}
-          >
-            {images?.map((image: any, idx: number) => {
-              return (
-                <motion.div
-                  key={idx}
-                  onClick={() => openImageViewer(idx)}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  className='hover:shadow-lg relative w-auto md:rounded-lg overflow-hidden  transition-all duration-500 ease-in-out md:mb-10'
-                >
-                  <Image
-                    src={image.url}
-                    layout='responsive'
-                    width={image.width}
-                    height={image.height}
-                    alt=''
-                    className='hover:shadow-black'
-                  />
-                </motion.div>
-              );
-            })}
-          </Masonry>
-          {isViewerOpen && (
-            <ImageViewer
-              src={images.map((image: any) => image.url)}
-              currentIndex={currentImage}
-              disableScroll={true}
-              closeOnClickOutside={true}
-              onClose={closeImageViewer}
-            />
-          )}
+          <SRLWrapper>
+            <Masonry
+              className='flex animate-slide-fwd gap-10'
+              breakpointCols={breakpointObj}
+            >
+              {images?.map((image: any, idx: number) => {
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className='hover:shadow-lg relative w-auto md:rounded-lg overflow-hidden  transition-all duration-500 ease-in-out md:mb-10'
+                  >
+                    <Image
+                      src={image.url}
+                      layout='responsive'
+                      width={image.width}
+                      height={image.height}
+                      alt=''
+                      className='hover:shadow-black'
+                    />
+                  </motion.div>
+                );
+              })}
+            </Masonry>
+          </SRLWrapper>
         </div>
       </div>
     </LayoutDefault>

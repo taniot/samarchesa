@@ -1,5 +1,5 @@
 .contactsWrapper {
-  @apply bg-black-other relative;
+  @apply bg-black-other relative pt-10;
 
   .containerWrapper {
     @apply container mx-auto py-20 text-center border-b border-display;
@@ -31,6 +31,7 @@
 
 @screen md {
   .contactsWrapper {
+    @apply pt-0;
     .containerWrapper {
       h2 {
         @apply text-4xl mb-10;

@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { useCycle } from 'framer-motion';
 import MenuContext from '../contexts/menu.context';
 import { useMemo, useEffect } from 'react';
+import SimpleReactLightbox from 'simple-react-lightbox';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -23,7 +24,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <MenuContext.Provider value={value}>
-      <Component {...pageProps} />
+      <SimpleReactLightbox>
+        <Component {...pageProps} />
+      </SimpleReactLightbox>
     </MenuContext.Provider>
   );
 };
