@@ -15,10 +15,12 @@ const Claim = () => {
             <li>Naturali</li>
           </ul>
         ) : (
-          <ul className={styles.desktop}>
-            <li>Fiore Sardo e pecorini</li>
-            <li>a latte crudo e naturali</li>
-          </ul>
+          <h1>
+            <ul className={styles.desktop}>
+              <li>Fiore Sardo e pecorini</li>
+              <li>a latte crudo e naturali</li>
+            </ul>
+          </h1>
         )}
         <Block />
       </div>

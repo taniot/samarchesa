@@ -23,7 +23,7 @@
       .button {
         cursor: pointer;
         @apply inline-flex text-xl px-10 py-3 rounded-lg justify-center items-center uppercase text-center transition duration-500 ease-in-out;
-        @apply bg-logo text-white border-logo border-2 hover:bg-transparent hover:text-gray-light;
+        @apply bg-gray-subtitle text-white border-logo border-2 hover:bg-transparent hover:text-gray-light;
       }
     }
   }

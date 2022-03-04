@@ -58,6 +58,7 @@ const SliderImages = ({ images }: { images: any }) => {
               key={index}
               selected={index === selectedIndex}
               onClick={() => scrollTo(index)}
+              index={index}
             />
           ))}
         </div>

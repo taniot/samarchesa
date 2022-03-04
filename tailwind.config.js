@@ -14,6 +14,7 @@ module.exports = {
         logo: '#919195',
         display: '#c3bca9',
         gray: {
+          subtitle: '#777',
           white: '#efefef',
           light: '#dedede',
           dark: '#313131',

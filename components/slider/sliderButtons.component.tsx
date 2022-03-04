@@ -5,9 +5,11 @@ import cls from 'classnames';
 export const DotButton = ({
   selected,
   onClick,
+  index,
 }: {
   selected: boolean;
   onClick: () => void;
+  index: number;
 }) => {
   const cls_selected = selected ? styles.is_selected : '';
 
@@ -16,6 +18,7 @@ export const DotButton = ({
       className={cls(styles.embla__dot, cls_selected)}
       type='button'
       onClick={onClick}
+      aria-label={`Choose image ${index}`}
     />
   );
 };
