@@ -6,7 +6,11 @@ import TitleSection from '../components/titleSection/titleSection.component';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { SRLWrapper } from 'simple-react-lightbox';
+import dynamic from 'next/dynamic';
+
+const LightGallery = dynamic(() => import('lightgallery/react'), {
+  ssr: false,
+});
 
 export const getStaticProps = async ({ locale }: { locale: string }) => {
   const endpoint: string = process.env.GRAPH_CMS_ENDPOINT as string;
@@ -72,7 +76,7 @@ const PressPage: FC<Props> = ({ page }) => {
       <div className='pt-10'>
         <TitleSection title={title} subtitle={`"${subtitle}"`} />
         <div className='md:mx-20 md:mb-10'>
-          <SRLWrapper>
+          <LightGallery selector='.gallery-item'>
             <Masonry
               className='flex animate-slide-fwd gap-10'
               breakpointCols={breakpointObj}
@@ -81,10 +85,11 @@ const PressPage: FC<Props> = ({ page }) => {
                 return (
                   <motion.div
                     key={idx}
+                    data-src={image.url}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className='hover:shadow-lg relative w-auto md:rounded-lg overflow-hidden  transition-all duration-500 ease-in-out md:mb-10'
+                    className='gallery-item block hover:shadow-lg relative w-auto md:rounded-lg overflow-hidden  transition-all duration-500 ease-in-out md:mb-10'
                   >
                     <Image
                       src={image.url}
@@ -98,7 +103,7 @@ const PressPage: FC<Props> = ({ page }) => {
                 );
               })}
             </Masonry>
-          </SRLWrapper>
+          </LightGallery>
         </div>
       </div>
     </LayoutDefault>

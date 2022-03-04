@@ -3,7 +3,8 @@ import type { AppProps } from 'next/app';
 import { useCycle } from 'framer-motion';
 import MenuContext from '../contexts/menu.context';
 import { useMemo, useEffect } from 'react';
-import SimpleReactLightbox from 'simple-react-lightbox';
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -24,9 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <MenuContext.Provider value={value}>
-      <SimpleReactLightbox>
-        <Component {...pageProps} />
-      </SimpleReactLightbox>
+      <Component {...pageProps} />
     </MenuContext.Provider>
   );
 };
