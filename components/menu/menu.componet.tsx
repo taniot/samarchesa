@@ -4,26 +4,30 @@ import MenuContext from '../../contexts/menu.context';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import styles from './menu.module.scss';
 import Link from 'next/link';
+import Block from '../block/block.component';
 
 const links = [
   { name: 'Sa Marchesa', to: '/', id: 1 },
   { name: 'Giuseppe Cugusi', to: '/#giuseppe-cugusi', id: 2 },
   { name: 'Formaggi', to: '/#formaggi', id: 3 },
   { name: 'Contatti', to: '#contatti', id: 4 },
-  { name: 'Press', to: '/press', id: 5 },
 ];
 
 const itemVariants = {
   closed: {
     opacity: 0,
   },
-  open: { opacity: 1 },
+  open: {
+    transition: {
+      delay: 0.2,
+    },
+    opacity: 1,
+  },
 };
 
 const sideVariants = {
   open: {
     transition: {
-      staggerChildren: 0.2,
       staggerDirection: 1,
     },
   },
@@ -40,7 +44,7 @@ const Menu = () => {
           className={styles.aside}
           initial={{ width: isSmall ? '100vw' : '500px', height: 0 }}
           animate={{
-            transition: { delay: 0.1, duration: 0.3 },
+            transition: { duration: 0.3 },
             height: '100vh',
           }}
           exit={{

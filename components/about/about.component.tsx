@@ -17,14 +17,18 @@ const About = () => {
         </div>
         <div className={styles.text}>
           <p className={styles.big}>Sa Marchesa è Giuseppe Cugusi.</p>
-          <p className={styles.medium}>
-            {`Della campagna conosce ogni sfumatura, ogni odore. Da suo padre
+          <div
+            className={styles.medium}
+            dangerouslySetInnerHTML={{
+              __html: `Della campagna conosce ogni sfumatura, ogni odore. Da suo padre
             pastore ha ereditato l'amore per questa terra sarda che, sotto la
             scorza dura, nasconde grande generosità. I suoi formaggi la
             rappresentano magnificamente. Basta assaggiarne una scheggia, e la
             bocca si insapora di mirto, lentisco, mentuccia selvatica. È come
-            mordere la macchia mediterranea.`}
-          </p>
+            mordere la macchia mediterranea.`,
+            }}
+          ></div>
+
           <div className={styles.linkIconContainer}>
             <BsPlayCircle className={styles.videoIcon} />
             <a
@@ -41,8 +45,9 @@ const About = () => {
 
       <div className={styles.textContainer}>
         <div className={styles.textBody}>
-          <p>
-            {` Nel suo ovile di Tanca Sa Marchesa, a Fordongianus, nel Barigadu al
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `Nel suo ovile di Tanca Sa Marchesa, a Fordongianus, nel Barigadu al
             confine con le terme romane dell'Imperatore Traiano, Giuseppe Cugusi
             cura le sue pecore da trentacinque anni. Le conosce una ad una, le
             ama e loro ricambiano. Sono pecore felici, qui i pascoli alti,
@@ -51,16 +56,19 @@ const About = () => {
             dello sfondo della catena del Grighine, a nord i monti di Bortigali
             e Bolotana. La casa colonica, ai piedi dell'altura, è diventata il
             laboratorio, la fucina dove Giuseppe Cugusi da forma al latte e lo
-            fa diventare <strong>Barigàdu</strong>, <strong>Lazzone</strong>,{' '}
-            <strong>Sa Marchesa</strong>, <strong>Foz'e Murta</strong>,{' '}
+            fa diventare <strong>Barigàdu</strong>, <strong>Lazzone</strong>,
+            <strong>Sa Marchesa</strong>, <strong>Foz'e Murta</strong>,
             <strong>Barone</strong>, <strong>Fiore Sardo DOP</strong>, secondo
             l'uso barbaricino che vuole la lavorazione del formaggio nel luogo
             dove le pecore vivono e vengono munte. Le sue sono mani sante che si
             tuffano nel bianco e, eseguendo gesti antichi di secoli, creano
-            pezzi unici come il Fiore Sardo DOP.`}
-          </p>
-          <p>
-            {`Giuseppe è un uomo antico, bello e forte. Laura, sua moglie, è una
+            pezzi unici come il Fiore Sardo DOP.`,
+            }}
+          ></div>
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `Giuseppe è un uomo antico, bello e forte. Laura, sua moglie, è una
             donna bella, moderna e imprenditrice nata. Insieme, dieci anni fa,
             consapevoli del valore del loro formaggio, hanno deciso di
             diversificare la produzione, e oltre al Fiore Sardo hanno
@@ -68,8 +76,10 @@ const About = () => {
             clienti hanno molto apprezzato e così Laura ha scelto di
             interrompere la vendita a industriali e grossisti per dedicarsi al
             circuito di ristoranti, enoteche e punti vendita, anche piccoli, che
-            sapessero amare quelle forme.`}
-          </p>
+            sapessero amare quelle forme.`,
+            }}
+          ></div>
+
           <div className='absolute w-3 h-3 bg-gray-light right-0 bottom-0' />
         </div>
       </div>

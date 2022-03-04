@@ -5,7 +5,10 @@ import styles from './slider.module.scss';
 import { useState, useCallback, useEffect } from 'react';
 
 const SliderImages = ({ images }: { images: any }) => {
-  const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
+  const [viewportRef, embla] = useEmblaCarousel({
+    containScroll: 'keepSnaps',
+    dragFree: true,
+  });
 
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);

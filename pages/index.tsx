@@ -2,41 +2,14 @@ import { gql, GraphQLClient } from 'graphql-request';
 import { FC } from 'react';
 import { LayoutHome } from '../components';
 import About from '../components/about/about.component';
+import Photos from '../components/photos/photos.component';
 import Products from '../components/products/products.component';
+import { getPhotos } from '../lib/graphcms/getPhotos';
+import { getProducts } from '../lib/graphcms/getProducts';
 import { ProductType } from '../utils/types';
 
-export const getStaticProps = async ({ locale }: { locale: string }) => {
-  const endpoint: string = process.env.GRAPH_CMS_ENDPOINT as string;
-  const client = new GraphQLClient(endpoint, {
-    headers: {
-      authorization: process.env.GRAPH_CMS_TOKEN as string,
-    },
-  });
-
-  const query = gql`
-    query getProducts($locales: [Locale!]!) {
-      products(locales: $locales) {
-        productName
-        color {
-          hex
-        }
-        shortDescription
-        description {
-          html
-        }
-        images {
-          url
-        }
-      }
-    }
-  `;
-
-  const variables: { locales: string[] } = {
-    locales: [locale],
-  };
-
-  const data = await client.request(query, variables);
-  const { products } = data;
+export const getStaticProps = async ({ locale = 'it' }: { locale: string }) => {
+  const { products } = await getProducts(locale);
 
   return {
     props: {

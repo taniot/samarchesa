@@ -3,25 +3,53 @@
 }
 
 .aside {
-  @apply bg-black-custom;
+  @apply bg-black-custom  z-30;
   position: fixed;
   top: 0;
   right: 0;
-
-  width: 18.75rem;
   height: 100vh;
-  @apply z-30;
 }
 
 .container {
-  margin: 4.5rem 1.4rem;
+  margin: 7rem 1.4rem;
 }
 
 .container a {
-  color: #f9fafb;
+  @apply text-logo font-display-semibold uppercase hover:text-display border-b border-gray-light;
   text-decoration: none;
   font-size: 1.75rem;
   font-weight: 600;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 20px;
+  position: relative;
+}
+
+@screen md {
+  .button {
+    @apply z-40;
+  }
+
+  .aside {
+    @apply bg-black-custom  z-30;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+  }
+
+  .container {
+    margin: 7rem 1.4rem;
+  }
+
+  .container a {
+    @apply text-logo font-display-semibold uppercase hover:text-display border-b border-gray-light;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    position: relative;
+  }
 }

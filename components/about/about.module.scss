@@ -9,7 +9,8 @@
     .text {
       @apply w-full leading-relaxed text-justify;
 
-      p {
+      p,
+      div {
         @apply text-gray-dark;
         &.big {
           @apply text-xl mb-3 font-sans-bold;
@@ -28,7 +29,8 @@
     .textBody {
       @apply relative border-b;
 
-      p {
+      p,
+      div {
         @apply text-base antialiased  mb-6 leading-8;
       }
     }
@@ -71,7 +73,8 @@
       }
       .text {
         @apply w-5/12 text-lg;
-        p {
+        p,
+        div {
           &.big {
             @apply text-xl mb-4;
           }
@@ -90,7 +93,8 @@
   .aboutWrapper {
     .bodyContainer {
       .text {
-        p {
+        p,
+        div {
           &.big {
             @apply text-2xl mb-6;
           }
@@ -111,7 +115,8 @@
       @apply p-0;
       .text {
         @apply pl-20;
-        p {
+        p,
+        div {
           &.big {
             @apply text-3xl;
           }

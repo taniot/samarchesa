@@ -3,10 +3,11 @@ import Header from '../components/header/header.component';
 import { gql, GraphQLClient } from 'graphql-request';
 import LayoutDefault from '../components/layout/LayoutDefault.component';
 import TitleSection from '../components/titleSection/titleSection.component';
-import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { useMediaQuery } from '../hooks/useMediaQuery';
+import styles from '../styles/press.module.scss';
 
 const LightGallery = dynamic(() => import('lightgallery/react'), {
   ssr: false,
@@ -58,51 +59,38 @@ interface Props {
   page: any;
 }
 
-const breakpointObj = {
-  default: 4,
-  3000: 3,
-  2000: 3,
-  1200: 2,
-  1000: 1,
-  500: 1,
-};
-
 const PressPage: FC<Props> = ({ page }) => {
   const { title, subtitle, images } = page || {};
+  const isSmall = useMediaQuery('(max-width: 640px)');
+  const galleryClass = isSmall ? 'gallery-item' : '';
 
   return (
     <LayoutDefault>
       <Header stuck={false} />
       <div className='pt-10'>
         <TitleSection title={title} subtitle={`"${subtitle}"`} />
-        <div className='md:mx-20 md:mb-10'>
+        <div className={styles.galleryContainer}>
           <LightGallery selector='.gallery-item'>
-            <Masonry
-              className='flex animate-slide-fwd gap-10'
-              breakpointCols={breakpointObj}
-            >
-              {images?.map((image: any, idx: number) => {
-                return (
-                  <motion.div
-                    key={idx}
-                    data-src={image.url}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className='gallery-item block hover:shadow-lg relative w-auto md:rounded-lg overflow-hidden  transition-all duration-500 ease-in-out md:mb-10'
-                  >
-                    <Image
-                      src={image.url}
-                      layout='responsive'
-                      width={image.width}
-                      height={image.height}
-                      alt=''
-                      className='hover:shadow-black'
-                    />
-                  </motion.div>
-                );
-              })}
-            </Masonry>
+            {images?.map((image: any, idx: number) => {
+              return (
+                <motion.figure
+                  key={idx}
+                  data-src={image.url}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className={`gallery-item`}
+                >
+                  <Image
+                    src={image.url}
+                    layout='responsive'
+                    width={image.width}
+                    height={image.height}
+                    alt=''
+                  />
+                </motion.figure>
+              );
+            })}
           </LightGallery>
         </div>
       </div>

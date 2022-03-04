@@ -1,0 +1,51 @@
+// .galleryContainer {
+//   @apply mb-20 mx-20;
+//   div {
+//     column-count: 1;
+//     column-gap: 0rem;
+//   }
+//   figure {
+//     margin: 0;
+//     display: grid;
+//     grid-template-rows: 1fr auto;
+//     margin-bottom: 2rem;
+//     break-inside: avoid;
+//   }
+
+//   figure > img {
+//     grid-row: 1 / -1;
+//     grid-column: 1;
+//   }
+
+//   img {
+//     @apply relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out;
+//     max-width: 100%;
+//     display: block;
+//   }
+// }
+
+// @media lg {
+//   .galleryContainer {
+//     div {
+//       column-count: 2;
+//       column-gap: 2rem;
+//     }
+//   }
+// }
+
+.galleryContainer {
+  @apply mx-20 mb-20;
+  div {
+    column-gap: 1.5em;
+    column-count: 3;
+
+    figure {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+
+      img {
+        @apply relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out;
+      }
+    }
+  }
+}
