@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ['it'],
-    defaultLocale: 'it',
+    locales: ["it"],
+    defaultLocale: "it",
   },
   images: {
-    domains: ['media.graphcms.com'],
+    domains: ["media.graphcms.com", "media.graphassets.com"],
   },
 };
 
