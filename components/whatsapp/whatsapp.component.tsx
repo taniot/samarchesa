@@ -14,7 +14,7 @@ export const WhatsApp = styled(WhatsAppImg)`
 const WhatsApp = () => {
   return (
     <a
-      href={`https://api.whatsapp.com/send?phone=3286027607`}
+      href={`https://api.whatsapp.com/send?phone=393286027607`}
       title="Scrivi a Giuseppe via WhatsApp"
       target="_blank"
       rel="noopener noreferrer"

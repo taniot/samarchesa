@@ -21,7 +21,7 @@ const footerData = {
     {
       name: "whatsapp",
       type: "whatsapp",
-      link: "https://api.whatsapp.com/send?phone=3286027607",
+      link: "https://api.whatsapp.com/send?phone=393286027607",
     },
     {
       name: "formaggisamarchesa",
@@ -87,7 +87,7 @@ const Footer = () => {
         <div className={styles.socialWrapper}>
           <div className={styles.socialContainer}>
             <a
-              href={`https://api.whatsapp.com/send?phone=3286027607`}
+              href={`https://api.whatsapp.com/send?phone=393286027607`}
               title="whatsapp"
               target="_blank"
               rel="noopener noreferrer"
